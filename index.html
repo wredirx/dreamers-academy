@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Dreamers Academy | Dr. Saifullah</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Poppins',sans-serif;
+background:#1f1f1f; /* official dark professional */
+color:#e6e6e6;
+padding-top:95px;
+}
+
+/* MOVING NOTICE */
+.notice{
+position:fixed;
+top:0;
+width:100%;
+background:linear-gradient(90deg,#2c3e50,#34495e,#2c3e50);
+padding:16px 0;
+font-weight:800;
+letter-spacing:1.5px;
+font-size:18px;
+z-index:999;
+cursor:pointer;
+overflow:hidden;
+}
+.notice span{
+display:inline-block;
+white-space:nowrap;
+animation:moveText 12s linear infinite;
+color:#ecf0f1;
+}
+@keyframes moveText{
+0%{transform:translateX(100%)}
+100%{transform:translateX(-100%)}
+}
+
+/* HEADER */
+header{
+text-align:center;
+padding:100px 20px 50px;
+}
+
+/* DR SAIFULLAH */
+header h1{
+font-family:'Playfair Display',serif;
+font-size:75px;
+color:#f39c12;
+text-shadow:0 0 25px #f39c12;
+letter-spacing:1px;
+}
+
+/* SUBJECT LINE */
+header h2{
+margin-top:10px;
+font-size:26px;
+color:#ecf0f1;
+font-weight:600;
+letter-spacing:1px;
+}
+
+/* ACADEMY NAME BIG */
+header .academy{
+margin-top:18px;
+font-family:'Playfair Display',serif;
+font-size:42px;
+font-weight:800;
+color:#fdf6e3;
+letter-spacing:2px;
+text-transform:uppercase;
+text-shadow:0 0 15px rgba(243,156,18,0.7);
+}
+
+/* SECTIONS */
+section{padding:60px 8%}
+.title{text-align:center;font-size:42px;color:#f39c12;margin-bottom:45px}
+
+/* SUBJECT CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+.card{
+position:relative;
+height:310px;
+border-radius:20px;
+overflow:hidden;
+display:flex;
+align-items:flex-end;
+padding:20px;
+box-shadow:0 0 25px rgba(243,156,18,0.2);
+transition:0.5s;
+color:white;
+cursor:pointer;
+}
+.card:hover{transform:scale(1.05);box-shadow:0 0 45px #f39c12}
+.card::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,0.55),rgba(0,0,0,0.15));
+}
+.card h3{
+position:relative;
+z-index:2;
+text-align:center;
+width:100%;
+font-size:28px;
+font-weight:700;
+color:#fdf6e3;
+text-shadow:0 0 8px #f39c12;
+}
+
+/* SUBJECT IMAGES */
+.physics::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc');
+background-size:cover;
+background-position:center;
+opacity:0.6;
+transition:all 0.5s;
+}
+.chemistry::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:url('https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6');
+background-size:cover;
+background-position:center;
+opacity:0.6;
+transition:all 0.5s;
+}
+.biology::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69');
+background-size:cover;
+background-position:center;
+opacity:0.6;
+transition:all 0.5s;
+}
+
+/* ABOUT */
+.about{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:19px;
+line-height:1.9;
+color:#e6e6e6;
+}
+
+/* FORM */
+form{
+max-width:600px;
+margin:auto;
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:20px;
+}
+input,textarea,select{
+width:100%;
+padding:14px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+background:rgba(255,255,255,0.12);
+color:white;
+font-size:16px;
+}
+select{background:white;color:black;font-weight:600}
+button{
+width:100%;
+padding:16px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#f39c12,#e67e22);
+font-weight:700;
+cursor:pointer;
+}
+button:hover{transform:scale(1.05);box-shadow:0 0 30px #f39c12}
+
+/* LOCATION */
+.location{text-align:center;font-size:20px;margin-bottom:25px}
+
+/* MAP */
+.map{
+max-width:900px;
+margin:auto;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 40px rgba(243,156,18,0.4);
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:white;
+padding:15px 22px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 0 30px #25D366;
+}
+.whatsapp:hover{transform:scale(1.1)}
+
+footer{text-align:center;padding:25px;color:#e6e6e6}
+
+/* MOBILE */
+@media(max-width:600px){
+header h1{font-size:50px}
+header .academy{font-size:28px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MOVING NOTICE -->
+<a href="#admission" style="text-decoration:none">
+<div class="notice">
+<span>🔥 ADMISSIONS OPEN — CLICK HERE TO APPLY — THE DREAMERS ACADEMY 🔥</span>
+</div>
+</a>
+
+<!-- HEADER -->
+<header>
+<h1>Dr. Saifullah</h1>
+<h2>Biology • Chemistry • Physics</h2>
+<div class="academy">The Dreamers Academy</div>
+</header>
+
+<!-- ABOUT TEACHER -->
+<section>
+<div class="title">About Teacher</div>
+<div class="about">
+Dr. Saifullah is a dedicated science educator known for conceptual clarity, board preparation, and student-focused teaching in Biology, Chemistry, and Physics.
+</div>
+</section>
+
+<!-- SUBJECTS -->
+<section>
+<div class="title">Subjects</div>
+<div class="cards">
+<div class="card biology"><h3>Biology</h3></div>
+<div class="card chemistry"><h3>Chemistry</h3></div>
+<div class="card physics"><h3>Physics</h3></div>
+</div>
+</section>
+
+<!-- ADMISSION FORM -->
+<section id="admission">
+<div class="title">Admission Form</div>
+
+<form action="https://formsubmit.co/Saifullahjalbani336@gmail.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_subject" value="New Admission Form - The Dreamers Academy">
+<input type="hidden" name="_autoresponse" value="Thank you for contacting The Dreamers Academy. We have received your admission request and will contact you soon.">
+
+<input type="text" name="Student Name" placeholder="Student Name" required>
+<input type="text" name="Contact Number" placeholder="Contact Number" required>
+<select name="Subject" required>
+<option value="">Select Subject</option>
+<option>Biology</option>
+<option>Chemistry</option>
+<option>Physics</option>
+</select>
+<textarea name="Message" placeholder="Message (Optional)"></textarea>
+<button type="submit">Submit Admission</button>
+</form>
+</section>
+
+<!-- ACADEMY LOCATION -->
+<section>
+<div class="title">Academy Location</div>
+<div class="location">
+📍 Cattle Colony, Behind Magsi PSO<br>
+<strong>The Dreamers Academy, Larkana</strong>
+</div>
+
+<div class="map">
+<iframe
+src="https://www.google.com/maps?q=Cattle+Colony+Larkana+Sindh+Pakistan&output=embed"
+width="100%"
+height="350"
+style="border:0;"
+allowfullscreen
+loading="lazy">
+</iframe>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 The Dreamers Academy | Dr. Saifullah
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/923222988936" target="_blank">WhatsApp</a>
+
+</body>
+</html>
